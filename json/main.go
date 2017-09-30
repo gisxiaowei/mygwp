@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 )
 
 // Movie 电影
@@ -23,15 +24,13 @@ func main() {
 	}
 	data, err := json.Marshal(movie)
 	if err != nil {
-		fmt.Printf("失败：%s\n", err)
-	} else {
-		fmt.Printf("结果：%s\n", data)
+		log.Fatalf("失败：%s\n", err)
 	}
+	fmt.Printf("结果：%s\n", data)
 
 	data2, err := json.MarshalIndent(movie, "", "  ")
 	if err != nil {
-		fmt.Printf("失败：%s\n", err)
-	} else {
-		fmt.Printf("结果：%s\n", data2)
+		log.Fatalf("失败：%s\n", err)
 	}
+	fmt.Printf("结果：%s\n", data2)
 }
