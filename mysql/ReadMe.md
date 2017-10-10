@@ -7,6 +7,7 @@ create table movie (
    name varchar(100) not null,
    publish_time datetime,
    primary key (id)
-);
- insert into movie (name, publish_time) values("asd", "2017-01-02 13:14:15");
+) character set = utf8;
+ insert into movie (name, publish_time) values("中国人", "2017-01-02 13:14:15");
+ select * from movie;
 ```

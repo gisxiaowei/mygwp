@@ -53,7 +53,7 @@ func update() {
 	checkErr(err)
 	defer stmt.Close()
 
-	res, err := stmt.Exec("movie", recordID)
+	res, err := stmt.Exec("电影", recordID)
 	checkErr(err)
 
 	affect, err := res.RowsAffected()
