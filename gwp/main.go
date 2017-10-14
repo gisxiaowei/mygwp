@@ -13,6 +13,14 @@ func main() {
 	files := http.FileServer(http.Dir(config.Static))
 	mux.Handle("/static/", http.StripPrefix("/static/", files))
 
+	//
+	// 所有路由类型在此匹配
+	// 路由处理函数定义在其他文件中
+	//
+
+	// index
+	mux.HandleFunc("/", index)
+
 	// 启动服务器
 	server := &http.Server{
 		Addr:           ":8080",
